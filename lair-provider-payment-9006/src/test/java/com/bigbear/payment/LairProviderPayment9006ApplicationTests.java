@@ -1,10 +1,10 @@
-package com.bigbear.lairproviderpayment9001;
+package com.bigbear.payment;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class LairProviderPayment9001ApplicationTests {
+class LairProviderPayment9006ApplicationTests {
 
 	@Test
 	void contextLoads() {

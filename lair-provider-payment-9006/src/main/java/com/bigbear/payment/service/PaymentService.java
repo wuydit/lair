@@ -1,7 +1,7 @@
-package com.bigbear.lairproviderpayment9001.service;
+package com.bigbear.payment.service;
 
+import com.bigbear.payment.dao.PaymentDao;
 import com.bigbear.commons.entity.Payment;
-import com.bigbear.lairproviderpayment9001.dao.PaymentDao;
 import org.springframework.stereotype.Service;
 
 /**

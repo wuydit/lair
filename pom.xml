@@ -8,8 +8,15 @@
   <artifactId>lair</artifactId>
   <version>0.0.1</version>
   <modules>
+    <module>lair-commons</module>
+    <module>lair-consumer-80</module>
+
     <module>lair-provider-payment-9002</module>
-    <module>lair-provider-payment-9001</module>
+    <module>lair-provider-payment-9006</module>
+
+    <module>lair-consumer-order-9003</module>
+    <module>lair-eureka-server-9004</module>
+    <module>lair-eureka-server-9005</module>
   </modules>
   <packaging>pom</packaging>
 

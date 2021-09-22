@@ -16,7 +16,7 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class ConsumerController {
 
-    public static final String PAYMENT_URL = "http://localhost:9002";
+    public static final String PAYMENT_URL = "http://PAYMENT-SERVICE";
 
     private final RestTemplate restTemplate;
 

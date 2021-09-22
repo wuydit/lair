@@ -1,4 +1,4 @@
-package com.bigbear.lairproviderpayment9001.dao;
+package com.bigbear.payment.dao;
 
 import com.bigbear.commons.entity.Payment;
 import org.apache.ibatis.annotations.*;

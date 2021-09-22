@@ -1,13 +1,11 @@
-package com.bigbear.lairproviderpayment9001.controller;
+package com.bigbear.payment.controller;
 
 import com.bigbear.commons.entity.CommonResult;
 import com.bigbear.commons.entity.Payment;
-import com.bigbear.lairproviderpayment9001.service.PaymentService;
+import com.bigbear.payment.service.PaymentService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
