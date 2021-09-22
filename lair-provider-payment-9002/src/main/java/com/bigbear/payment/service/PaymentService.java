@@ -1,12 +1,8 @@
 package com.bigbear.payment.service;
 
 import com.bigbear.payment.dao.PaymentDao;
-import com.bigbear.payment.entity.Payment;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Repository;
+import com.bigbear.commons.entity.Payment;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 
 /**
  * @author wuyd

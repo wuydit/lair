@@ -1,7 +1,7 @@
 package com.bigbear.payment.controller;
 
-import com.bigbear.payment.dto.CommonResult;
-import com.bigbear.payment.entity.Payment;
+import com.bigbear.commons.entity.CommonResult;
+import com.bigbear.commons.entity.Payment;
 import com.bigbear.payment.service.PaymentService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.*;

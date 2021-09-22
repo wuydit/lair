@@ -1,4 +1,4 @@
-package com.bigbear.payment.dto;
+package com.bigbear.commons.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

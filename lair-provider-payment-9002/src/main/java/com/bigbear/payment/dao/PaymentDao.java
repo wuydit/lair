@@ -1,6 +1,6 @@
 package com.bigbear.payment.dao;
 
-import com.bigbear.payment.entity.Payment;
+import com.bigbear.commons.entity.Payment;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Component;
 

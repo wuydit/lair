@@ -1,7 +1,7 @@
 package com.bigbear.lair.order.controller;
 
-import com.bigbear.lair.order.dto.CommonResult;
-import com.bigbear.lair.order.entity.Payment;
+import com.bigbear.commons.entity.CommonResult;
+import com.bigbear.commons.entity.Payment;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

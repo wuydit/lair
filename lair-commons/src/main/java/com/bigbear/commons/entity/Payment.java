@@ -1,4 +1,4 @@
-package com.bigbear.lair.order.entity;
+package com.bigbear.commons.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
