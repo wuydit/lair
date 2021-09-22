@@ -2,12 +2,14 @@ package com.bigbear.payment.dao;
 
 import com.bigbear.payment.entity.Payment;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Component;
 
 /**
  * @author wuyd
  * 2021/9/18 16:29
  */
 @Mapper
+@Component
 public interface PaymentDao {
 
     /**
@@ -17,7 +19,7 @@ public interface PaymentDao {
      */
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     @Insert("insert into payment (serial) values (#{serial})")
-    int insert(Payment payment);
+    long insert(Payment payment);
 
     /**
      * 根据Id获取

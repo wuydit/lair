@@ -19,4 +19,7 @@ public class Payment implements Serializable {
 
     private String serial;
 
+    public Payment(String serial) {
+        this.serial = serial;
+    }
 }
