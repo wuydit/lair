@@ -2,7 +2,7 @@ server:
   port: 9002
 spring:
   application:
-    name: Payment-service
+    name: payment-service
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: org.gjt.mm.mysql.Driver
@@ -20,3 +20,9 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.bigbear.*.dao
+eureka:
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://localhost:9004/eureka
