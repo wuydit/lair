@@ -4,7 +4,10 @@ import com.bigbear.commons.entity.CommonResult;
 import com.bigbear.commons.entity.Payment;
 import com.bigbear.payment.service.PaymentService;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * @author wuyd
@@ -16,8 +19,12 @@ public class PaymentController {
 
     private final PaymentService paymentService;
 
-    public PaymentController(PaymentService paymentService) {
+    private final DiscoveryClient discoveryClient;
+
+    public PaymentController(PaymentService paymentService,
+                             DiscoveryClient discoveryClient) {
         this.paymentService = paymentService;
+        this.discoveryClient = discoveryClient;
     }
 
     @GetMapping("/payment/insert/{serial}")
@@ -37,5 +44,15 @@ public class PaymentController {
         Payment payment = paymentService.getById(id);
         log.info("获取");
         return new CommonResult<>(0,"成功", payment);
+    }
+
+    @GetMapping("/discovery")
+    public Object discovery(){
+        List<String> list = discoveryClient.getServices();
+        log.info("services:{}", list.toString());
+        list.forEach(s -> {
+            log.info(discoveryClient.getInstances(s));
+        });
+        return discoveryClient;
     }
 }
