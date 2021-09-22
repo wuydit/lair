@@ -1,4 +1,4 @@
-package com.bigbear.lairproviderpayment9001;
+package com.bigbear.payment;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,10 +11,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 @EnableDiscoveryClient
 @EnableEurekaClient
 @SpringBootApplication
-public class LairProviderPayment9001Application {
+public class LairProviderPayment9006Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(LairProviderPayment9001Application.class, args);
+		SpringApplication.run(LairProviderPayment9006Application.class, args);
 	}
 
 }
