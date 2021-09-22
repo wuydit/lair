@@ -21,8 +21,11 @@ mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.bigbear.*.dao
 eureka:
+  instance:
+    instance-id: provider-service-${server.port}
+    prefer-ip-address: true
   client:
     service-url:
       register-with-eureka: true
       fetch-registry: true
-      defaultZone: http://localhost:9004/eureka
+      defaultZone: http://eureka1:9004/eureka,http://eureka2:9005/eureka
