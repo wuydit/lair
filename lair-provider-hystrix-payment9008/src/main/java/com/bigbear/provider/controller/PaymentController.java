@@ -38,4 +38,11 @@ public class PaymentController {
         log.info("paymentInfoTimeOut:{} 端口触发, result:{}", serverPort, result);
         return result;
     }
+    @GetMapping("hystrix/cb/{id}")
+    public String cb(@PathVariable("id") Integer id){
+        String result = paymentService.paymentCircuitBreaker(id);
+        log.info("paymentCircuitBreaker:{} 端口触发, result:{}", serverPort, result);
+        return result;
+    }
+
 }

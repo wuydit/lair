@@ -39,5 +39,23 @@ public class PaymentService {
         return "Thread poll:" + Thread.currentThread().getName() + "paymentInfoTimeHandler. id:" + id;
     }
 
+    @HystrixCommand(fallbackMethod = "paymentCircuitBreakerFallback",
+            commandProperties = {
+                    @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
+                    @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "10"),
+                    @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "10000"),
+                    @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "60")
+            })
+    public String paymentCircuitBreaker(Integer id){
+        if(id < 0){
+            throw new RuntimeException("订单不存在");
+        }
+        return Thread.currentThread().getName() + "订单:" + id + "成功支付下单";
+    }
+
+    public String paymentCircuitBreakerFallback(Integer id){
+        return "负载过高,暂停服务";
+    }
+
 
 }
