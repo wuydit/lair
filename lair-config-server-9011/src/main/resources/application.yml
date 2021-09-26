@@ -7,13 +7,13 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:wuydit/lair.git
-          search-paths:
-            - config
-        default-label: master
+          uri: https://github.com/wuydit/lair-config.git
+          search-paths: {application}
+          default-label: main
+          skip-ssl-validation: true
 eureka:
   instance:
-    instance-id: provider-service-${server.port}
+    instance-id: ${spring.application.name}-${server.port}
     prefer-ip-address: true
   client:
     service-url:
