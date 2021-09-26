@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
  * 2021/9/22 9:27
  */
 @Service
-public class PaymentService {
+public class PaymentService implements IPaymentService{
 
     private final PaymentDao paymentDao;
 
@@ -17,10 +17,12 @@ public class PaymentService {
         this.paymentDao = paymentDao;
     }
 
+    @Override
     public long insert(Payment payment){
         return paymentDao.insert(payment);
     }
 
+    @Override
     public Payment getById(long id){
         return paymentDao.getById(id);
     }
