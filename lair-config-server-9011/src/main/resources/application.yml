@@ -1,0 +1,23 @@
+server:
+  port: 9011
+spring:
+  application:
+    name: config-service
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:wuydit/lair.git
+          search-paths:
+            - config
+        default-label: master
+eureka:
+  instance:
+    instance-id: provider-service-${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+#      defaultZone: http://eureka1:9004/eureka,http://eureka2:9005/eureka
+      defaultZone: http://eureka1:9004/eureka

@@ -2,9 +2,7 @@ package com.bigbear.provider.controller;
 
 import com.bigbear.provider.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -38,6 +36,7 @@ public class PaymentController {
         log.info("paymentInfoTimeOut:{} 端口触发, result:{}", serverPort, result);
         return result;
     }
+
     @GetMapping("hystrix/cb/{id}")
     public String cb(@PathVariable("id") Integer id){
         String result = paymentService.paymentCircuitBreaker(id);

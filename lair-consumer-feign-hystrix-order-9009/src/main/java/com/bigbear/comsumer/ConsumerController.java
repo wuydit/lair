@@ -4,9 +4,12 @@ import com.netflix.hystrix.contrib.javanica.annotation.DefaultProperties;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
 
 /**
  * @author wuyd
@@ -17,11 +20,11 @@ import org.springframework.web.bind.annotation.RestController;
 @DefaultProperties(defaultFallback = "defaultFallback")
 public class ConsumerController {
 
-    private final PaymentService paymentService;
+    @Resource
+    private PaymentService paymentService;
 
-    public ConsumerController(PaymentService paymentService) {
-        this.paymentService = paymentService;
-    }
+    @Value("${server.port}")
+    private String serverPort;
 
     @GetMapping("/ok/{id}")
     public String getById(@PathVariable("id") Long id){
@@ -35,6 +38,11 @@ public class ConsumerController {
     @GetMapping("/timeOut/{id}")
     public String timeOut(@PathVariable("id") Long id){
         return paymentService.timeout(id);
+    }
+
+    @GetMapping("/lb")
+    public String lb(){
+        return serverPort;
     }
 
     public String error(@PathVariable("id") Long id){
