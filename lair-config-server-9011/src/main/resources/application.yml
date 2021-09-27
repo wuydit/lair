@@ -9,7 +9,7 @@ spring:
         git:
           uri: https://github.com/wuydit/lair-config.git
           search-paths:
-            - lair-provider-payment-9006
+            - lair-config
           default-label: main
           skip-ssl-validation: true
 eureka:

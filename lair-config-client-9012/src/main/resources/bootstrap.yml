@@ -1,0 +1,16 @@
+server:
+  port: 9012
+spring:
+  application:
+    name: config-client-service
+  cloud:
+    config:
+      label: main
+      name: config
+      profile: dev
+      uri: http://config:9011
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
