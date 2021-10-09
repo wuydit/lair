@@ -1,0 +1,31 @@
+server:
+  port: 9014
+spring:
+  application:
+    name: stream-rabbitmq-provider-service
+  cloud:
+    stream:
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: 152.136.235.203
+                port: 5672
+                username: guest
+                password: guest
+      bindings:
+        output:
+          destination: lair-exchange
+          content-type: application/json
+          binder: defaultRabbit
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      defaultZone: http://eureka1:9004/eureka
