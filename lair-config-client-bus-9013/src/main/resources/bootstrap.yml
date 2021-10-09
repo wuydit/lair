@@ -1,0 +1,31 @@
+server:
+  port: 9013
+spring:
+  application:
+    name: config-client-bus-service
+  cloud:
+    config:
+      label: main
+      name: config
+      profile: dev
+      uri: http://config:9011
+  rabbitmq:
+    host: 152.136.235.203
+    port: 5672
+    username: guest
+    password: guest
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+eureka:
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+    prefer-ip-address: true
+  client:
+    service-url:
+      register-with-eureka: true
+      fetch-registry: true
+      #      defaultZone: http://eureka1:9004/eureka,http://eureka2:9005/eureka
+      defaultZone: http://eureka1:9004/eureka

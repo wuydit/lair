@@ -7,23 +7,17 @@
 		<groupId>com.bigbear</groupId>
 		<version>0.0.1</version>
 	</parent>
-	<artifactId>lair-config-server-9011</artifactId>
+	<artifactId>lair-config-client-bus-9013</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>lair-config-server-9011</name>
+	<name>lair-config-client-bus-9013</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
-
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-server</artifactId>
+			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 
 		<dependency>
