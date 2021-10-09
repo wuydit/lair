@@ -21,14 +21,13 @@ import java.util.UUID;
 public class LairMsgProviderServiceImpl implements LairMsgProviderService {
 
     @Resource
-    @Qualifier("nullChannel")
-    private MessageChannel messageChannel;
+    private MessageChannel output;
 
     @Override
     public String send() {
         String serial = UUID.randomUUID().toString();
-        messageChannel.send(MessageBuilder.withPayload(serial).build());
+        output.send(MessageBuilder.withPayload(serial).build());
         log.info("send: {}.", serial);
-        return null;
+        return "ok";
     }
 }

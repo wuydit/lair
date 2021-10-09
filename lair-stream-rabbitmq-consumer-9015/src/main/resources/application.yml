@@ -1,8 +1,8 @@
 server:
-  port: 9014
+  port: 9015
 spring:
   application:
-    name: stream-rabbitmq-provider-service
+    name: stream-rabbitmq-consumer-service
   cloud:
     stream:
       binders:
@@ -17,10 +17,11 @@ spring:
                 password: guest
                 virtual-host: /
       bindings:
-        output:
+        input:
           destination: lair-exchange
           content-type: application/json
           binder: defaultRabbit
+          group: G1
 eureka:
   instance:
     instance-id: ${spring.application.name}-${server.port}
